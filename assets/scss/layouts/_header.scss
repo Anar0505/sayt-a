@@ -1,0 +1,264 @@
+header {
+  position: fixed;
+  width: 100%;
+  left: 0;
+  top: 0;
+  background-color: white;
+  z-index: 10;
+  .container {
+    max-width: 1000px;
+    margin: 0 auto;
+    .navbar {
+      width: 100%;
+      display: flex;
+      height: 114px;
+      align-items: center;
+      justify-content: space-between;
+      .navbar__info {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 10px;
+        .navbar__info__name {
+          font-family: "lulo", sans-serif;
+          font-size: 17px;
+          cursor: pointer;
+          letter-spacing: normal;
+          text-align: center;
+        }
+        .navbar__info__job {
+          font-family: "avenir", sans-serif;
+          font-size: 14px;
+          text-align: center;
+          line-height: normal;
+          letter-spacing: 2.4px;
+        }
+      }
+      .navbar__items {
+        display: flex;
+        align-items: center;
+
+        .items {
+          display: flex;
+          li {
+            padding: 0 10px;
+            font-family: "avenir", sans-serif;
+            font-size: 15px;
+          }
+          li:last-child {
+            color: green;
+            padding: 0 7px;
+            margin-left: 20px;
+            text-align: center;
+            font-size: 15px;
+            a {
+              display: flex;
+              align-items: center;
+
+              i {
+                padding: 0 7px;
+                font-size: 22px;
+              }
+            }
+          }
+        }
+      }
+      .openbtn {
+        display: none;
+
+        background: white;
+        width: 50px;
+        height: 50px;
+        border-radius: 5px;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+      }
+
+      .openbtn .openbtn-area {
+        transition: all 0.4s;
+      }
+
+      .openbtn span {
+        position: absolute;
+        background: black;
+        display: inline-block;
+        border-radius: 3px;
+        left: 13px;
+        height: 3px;
+        transition: all 0.4s;
+        width: 50%;
+        &:nth-of-type(1) {
+          top: 16px;
+        }
+        &:nth-of-type(2) {
+          top: 24px;
+        }
+        &:nth-of-type(3) {
+          top: 32px;
+        }
+      }
+
+      .openbtn.active .openbtn-area {
+        transform: rotatex(360deg);
+      }
+
+      .openbtn.active span {
+        &:nth-of-type(1) {
+          width: 45%;
+          top: 18px;
+          left: 14px;
+          transform: translateY(6px) rotate(-135deg);
+        }
+        &:nth-of-type(2) {
+          opacity: 0;
+        }
+        &:nth-of-type(3) {
+          width: 45%;
+          top: 30px;
+          left: 14px;
+          transform: translateY(-6px) rotate(135deg);
+        }
+      }
+      .responsivemenu {
+        width: 100%;
+        left: 0;
+        top: 114px;
+        position: fixed;
+        height: calc(100vh - 114px);
+        background-color: white;
+
+        justify-content: center;
+        display: none;
+        .responsivemenu__container {
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          flex-direction: column;
+          width: 70%;
+          gap: 20px;
+          .login {
+            color: green;
+            padding: 0 7px;
+            margin-left: 20px;
+            text-align: center;
+            font-size: 30px;
+            a {
+              display: flex;
+              align-items: center;
+
+              i {
+                padding: 0 7px;
+                font-size: 30px;
+                margin-right: 10px;
+              }
+            }
+          }
+
+          .responsivemenu__items {
+            width: 60%;
+            ul {
+              width: 100%;
+              li {
+                text-align: center;
+                font-size: 30px;
+                padding: 20px;
+                font-family: "avenir", sans-serif;
+                width: 100%;
+                border-bottom: 1px solid #00000060;
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+header {
+  @media only screen and (max-width: 1200px) {
+    .container {
+      max-width: 800px;
+    }
+  }
+
+  @media only screen and (max-width: 990px) {
+    .container {
+      max-width: 600px;
+      .navbar {
+        .navbar__items {
+          display: none;
+        }
+        .openbtn {
+          display: grid;
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 690px) {
+    .container {
+      max-width: 400px;
+    }
+  }
+  @media only screen and (max-width: 470px) {
+    .container {
+      max-width: 100%;
+      padding: 0 20px;
+
+      .navbar {
+        .navbar__info {
+          .navbar__info__name {
+            text-align: start;
+            font-size: 15px;
+          }
+          .navbar__info__job {
+            text-align: start;
+            font-size: 14px;
+          }
+        }
+      }
+    }
+  }
+  @media only screen and (max-width: 540px) {
+   .container{
+    .navbar{
+    .responsivemenu {
+      .responsivemenu__container {
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+       justify-content: start;
+       align-items: center;
+       padding-top: 100px;
+        .login {
+          padding: 0 7px;
+          margin-left: 20px;
+
+          font-size: 20px;
+          a {
+            i {
+              padding: 0 7px;
+              font-size: 20px;
+              margin-right: 10px;
+            }
+          }
+        }
+
+        .responsivemenu__items {
+          ul {
+            li {
+              font-size: 20px;
+              padding: 20px;
+
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}}}
+
+.displaying {
+  display: flex !important ;
+}
